@@ -22,7 +22,7 @@ createPost(c);
 // handle search
 const handleSearch = () => {
 
-
+    toggleSpinner(true);
     const inputText = document.getElementById('searchId');
     const searchText = inputText.value;
 
@@ -80,13 +80,14 @@ const displayPost = (postInfos) => {
         
         `;
     
+        console.log(postInfo.id);
 
         postDis.innerHTML = `
 
         <!-- image -->
                         <div class="relative">
                             <img class="rounded-2xl " src="${postInfo.image}" alt="">
-                            <div class="bg-green-500 h-3 w-3 rounded-full  absolute top-0 right-0"></div>
+                            <div  class="bg-green-500 h-3 w-3 rounded-full  absolute top-0 right-0"></div>
                         </div>
 
                         <!--card body -->
@@ -148,6 +149,8 @@ const displayPost = (postInfos) => {
         postContainer.appendChild(postDis);
 
     });
+
+    toggleSpinner(false);
 }
 
 
@@ -242,5 +245,22 @@ const displayLatestPost = (latestPostInfos) => {
         latestContainer.appendChild(latestPostDis);
 
     });
+}
+
+
+// spinner
+
+const toggleSpinner=(isLoading)=>{
+    const loadingSpinner = document.getElementById('loading-Spinner');
+    
+    if(isLoading){
+        loadingSpinner.classList.remove('hidden');
+    }
+    else{
+
+        setTimeout(function() {
+            loadingSpinner.classList.add('hidden');
+        }, 2000);
+    }
 }
 
