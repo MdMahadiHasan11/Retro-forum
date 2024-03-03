@@ -81,7 +81,6 @@ const displayPost = (postInfos) => {
         `;
     
         const iid=postInfo.id;
-        console.log(iid);
 
         postDis.innerHTML = `
 
@@ -139,7 +138,7 @@ const displayPost = (postInfos) => {
                                 </div>
                                 <!-- message button check -->
                                 <div>
-                                    <button onclick="handleMessage('${postInfo.view_count}','${postInfo.title}')" class="btn  bg-[#797DFC]"><i class="fa-regular fa-envelope"></i></button>
+                                    <button onclick="handleMessage('${postInfo.view_count}',\`${postInfo.title}\`)" class="btn  bg-[#797DFC]"><i class="fa-regular fa-envelope"></i></button>
                                 </div>
 
                             </div>
@@ -161,13 +160,14 @@ const displayPost = (postInfos) => {
 
         if(postInfo.isActive){
 
-            activeSet.classList.add('bg-green-500');
+            activeSet.classList.add('bg-green-600');
 
         }
         else{
             
-            activeSet.classList.add('bg-red-500');
+            activeSet.classList.add('bg-red-600');
         }
+        // active color set end
 
     });
 
