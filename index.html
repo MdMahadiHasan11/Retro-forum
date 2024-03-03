@@ -141,9 +141,9 @@
                         <!-- Search field -->
                         <div id="discount" class="flex justify-between  ">
                             <div id="couponContainer" class="flex  bg-white w-full rounded-2xl ">
-                                <input id="searchId" class="pl-5 border-none w-full "
-                                    placeholder="Search here anything" type="text">
-                                <button  onclick="handleSearch()"
+                                <input id="searchId" class="pl-5 border-none w-full " placeholder="Search here anything"
+                                    type="text">
+                                <button onclick="handleSearch()"
                                     class="btn border-none bg-[#797DFC] rounded-2xl px-5 py-3 text-xl font-bold flex items-center text-white">Search</button>
                             </div>
                         </div>
@@ -168,73 +168,13 @@
             </div>
 
             <!-- body -->
-            <div class="lg:flex justify-between">
+            <div class="lg:flex">
 
                 <!-- card container start -->
-                <div id="postContainer">
+                <div id="postContainer" class=" lg:w-4/6">
                     <!-- card-1 -->
 
-                    <div
-                        class="flex  justify-center items-center bg-[#797DFC1A] lg:p-10 p-3 rounded-xl my-5 border border-solid border-[#797DFC] ">
-                        <!-- image -->
-                        <div class="relative">
-                            <img class="rounded-2xl  " src="https://i.ibb.co/pjM6Ybr/pexels-anastasia-shuraeva-9607206.jpg" alt="">
-                            <div class="bg-green-500 h-3 w-3 rounded-full absolute top-0 right-0"></div>
-                        </div>
-
-                        <!--card body -->
-                        <div class="ml-3">
-                            <div class="font-medium text-stone-500 flex gap-10">
-                                <!-- category -->
-                                <p># Music</p>
-
-                                <!--Author name  -->
-                                <p>Author : Awlad Hossain</p>
-
-                            </div>
-
-                            <div>
-                                <!-- name -->
-                                <h2 class="text-xl font-bold mt-5">10 Kids Unaware of Their Halloween Costume</h2>
-
-                                <!-- description -->
-                                <p class="text-stone-400 my-4">It’s one thing to subject yourself to ha Halloween
-                                    costume mishap because, hey that’s your prerogative</p>
-                                <div class="mb-5 border-t border-dashed border-gray-400"></div>
-
-                            </div>
-
-                            <!-- card comment section -->
-                            <div class="flex justify-between ">
-                                <div class="flex gap-3 lg:gap-12 justify-center items-center">
-                                    <!-- message -->
-                                    <div class="flex gap-2 justify-center items-center">
-                                        <i class="fa-solid fa-message"></i>
-                                        <!-- message count -->
-                                        <p>550</p>
-                                    </div>
-                                    <!-- view -->
-                                    <div class="flex gap-2 justify-center items-center">
-                                        <i class="fa-regular fa-eye"></i>
-                                        <!-- view count -->
-                                        <p> 1500</p>
-                                    </div>
-                                    <!-- time -->
-                                    <div class="flex gap-2 justify-center items-center">
-                                        <i class="fa-regular fa-clock"></i>
-                                        <!-- time count -->
-                                        <p>5 min</p>
-                                    </div>
-
-                                </div>
-                                <!-- message button check -->
-                                <div>
-                                    <button class="btn  bg-[#797DFC]"><i class="fa-regular fa-envelope"></i></button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <!-- 2 -->
                     <!-- 
@@ -309,30 +249,31 @@
 
 
                 <!-- card read count container start -->
-                <div class=" bg-[#797DFC1A] rounded-2xl lg:p-6 p-2 lg:ml-6">
+                <div class=" bg-[#797DFC1A] rounded-2xl mt-4 lg:p-6 p-2 lg:ml-6 flex-1">
 
                     <!-- Tittle here -->
                     <div class="flex justify-between  ">
                         <div>Title</div>
                         <!-- count total -->
-                        <div><i class="fa-solid fa-check-double text-green-700"></i>Mark as read (<span>4</span>)</div>
+                        <div><i class="fa-solid fa-check-double text-green-700"></i>Mark as read (<span
+                                id="countTotalMessage">0</span>)</div>
                     </div>
 
                     <!-- container here -->
-                    <div>
+                    <div id="messageContainer" class="">
                         <!-- 1 comment -->
-                        <div class="flex justify-between bg-white pb-3 px-3 rounded-2xl mt-4">
-                            <!-- name -->
-                            <h2 class="text-lg font-bold mt-5">10 Kids Unaware of Their Halloween Costume</h2>
+                        <!-- <div class="flex justify-between bg-white pb-3 px-3 rounded-2xl mt-4">
 
-                            <!-- view -->
+                            <h2 class="text-lg font-bold mt-5"> hasan</h2>
+
+
                             <div class="flex gap-2 justify-center items-center">
                                 <i class="fa-regular fa-eye"></i>
-                                <!-- view count -->
-                                <p> 1500</p>
+
+                                <p>110</p>
                             </div>
 
-                        </div>
+                        </div> -->
 
                     </div>
                     <!-- end container -->
@@ -390,7 +331,7 @@
             <!-- cart container -->
             <div id="latestContainer" class="lg:grid lg:grid-cols-3 md:grid-cols-2 gap-4 ">
                 <!-- cart 1 -->
-                <div class="p-6 border border-solid border-gray-900 rounded-3xl my-5">
+                <!-- <div class="p-6 border border-solid border-gray-900 rounded-3xl my-5">
                     <div>
                         <img src="https://i.ibb.co/VYGSkLz/pexels-jeshootscom-442576.jpg" alt="">
                     </div>
@@ -401,18 +342,19 @@
                     </div>
 
                     <div>
-                        <!-- name -->
+                        
                         <h2 class="text-xl font-bold mt-5">What will a mars habitat force that impact in our daily
                             life!!!</h2>
 
-                        <!-- description -->
+                       
                         <p class="text-stone-400 my-4">Yes, you can run unit tests and view the results directly within
                             the app. </p>
                     </div>
 
                     <div class="flex gap-4">
-                        <!-- img -->
-                        <img class="w-11 h-11 rounded-full" src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg" alt="">
+                        
+                        <img class="w-11 h-11 rounded-full"
+                            src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg" alt="">
 
                         <div>
                             <p class="font-semibold">Cameron Williamson</p>
@@ -420,7 +362,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
 

@@ -1,3 +1,6 @@
+let countMessage=1;
+
+
 // all post
 const createPost = async (searchText2) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText2}`);
@@ -10,33 +13,36 @@ const createPost = async (searchText2) => {
 
 }
 
-const c='';
- createPost(c);
+const c = '';
+createPost(c);
 // call all post
 
 
 // searchPost
 // handle search
-const handleSearch = ()=>{
-    
+const handleSearch = () => {
 
-    const inputText=document.getElementById('searchId');
-    const searchText=inputText.value;
+
+    const inputText = document.getElementById('searchId');
+    const searchText = inputText.value;
 
     // console.log(searchText);
 
     // clear 
     const postContainer = document.getElementById('postContainer');
-     
-    postContainer.textContent='';
+
+    postContainer.textContent = '';
 
     createPost(searchText);
-    
-        // displayPost(info);
-    
+
+    // displayPost(info);
+
 
 
 }
+
+
+
 
 
 
@@ -70,9 +76,10 @@ const displayPost = (postInfos) => {
         const postDis = document.createElement('div');
 
         postDis.classList = `
-        flex  justify-center items-center bg-[#797DFC1A] lg:p-10 p-3 rounded-xl my-5 border border-solid border-[#797DFC] 
+        flex  justify-center items-center bg-[#797DFC1A] lg:p-10 p-3 rounded-xl my-5 border border-solid border-[#797DFC] lg:w-5/6
         
         `;
+    
 
         postDis.innerHTML = `
 
@@ -130,7 +137,7 @@ const displayPost = (postInfos) => {
                                 </div>
                                 <!-- message button check -->
                                 <div>
-                                    <button class="btn  bg-[#797DFC]"><i class="fa-regular fa-envelope"></i></button>
+                                    <button onclick="handleMessage('${postInfo.view_count}','${postInfo.title}')" class="btn  bg-[#797DFC]"><i class="fa-regular fa-envelope"></i></button>
                                 </div>
 
                             </div>
@@ -141,6 +148,49 @@ const displayPost = (postInfos) => {
         postContainer.appendChild(postDis);
 
     });
+}
+
+
+
+
+// handleMessage
+const handleMessage = (view,title) => {
+
+    // calculate count
+    countFunc(countMessage++);
+
+
+    const messageContainer = document.getElementById('messageContainer');
+    
+
+
+    const messageDis = document.createElement('div');
+
+    messageDis.classList = `flex justify-between bg-white pb-3 px-3 rounded-2xl mt-4`;
+
+    messageDis.innerHTML = `
+        <h2 class="text-lg font-bold mt-5">${title}</h2>
+
+        <!-- view -->
+        <div class="flex gap-2 justify-center items-center">
+            <i class="fa-regular fa-eye"></i>
+            <!-- view count -->
+            <p> ${view}</p>
+        </div>
+        
+        `;
+
+        const getText=document.getElementById('id');
+
+        messageContainer.appendChild(messageDis);
+
+}
+
+
+const countFunc = (num) =>{
+    const countNum = document.getElementById('countTotalMessage');
+
+    countNum.innerText=num;
 }
 
 
