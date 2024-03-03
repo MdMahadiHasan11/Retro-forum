@@ -141,9 +141,9 @@
                         <!-- Search field -->
                         <div id="discount" class="flex justify-between  ">
                             <div id="couponContainer" class="flex  bg-white w-full rounded-2xl ">
-                                <input id="couponInput" class="pl-5 border-none w-full "
+                                <input id="searchId" class="pl-5 border-none w-full "
                                     placeholder="Search here anything" type="text">
-                                <button id="applyCoupon" onclick="couponCall()"
+                                <button  onclick="handleSearch()"
                                     class="btn border-none bg-[#797DFC] rounded-2xl px-5 py-3 text-xl font-bold flex items-center text-white">Search</button>
                             </div>
                         </div>
@@ -178,8 +178,8 @@
                         class="flex  justify-center items-center bg-[#797DFC1A] lg:p-10 p-3 rounded-xl my-5 border border-solid border-[#797DFC] ">
                         <!-- image -->
                         <div class="relative">
-                            <img class="rounded-2xl " src="https://i.ibb.co/pjM6Ybr/pexels-anastasia-shuraeva-9607206.jpg" alt="">
-                            <div class="h-3 w-3 rounded-full bg-green-600 absolute top-0 right-0"></div>
+                            <img class="rounded-2xl  " src="https://i.ibb.co/pjM6Ybr/pexels-anastasia-shuraeva-9607206.jpg" alt="">
+                            <div class="bg-green-500 h-3 w-3 rounded-full absolute top-0 right-0"></div>
                         </div>
 
                         <!--card body -->
@@ -435,7 +435,7 @@
         <div class="py-24 mt-16 flex flex-col justify-center items-center">
             <div>
                 <!-- name -->
-                <h2 class="text-5xl font-bold mt-5 text-center">ForumFusion</h2>
+                <h2 id="" class="foot text-5xl font-bold mt-5 text-center">ForumFusion</h2>
 
                 <!-- description -->
                 <p class="text-stone-400 my-6">Contrary to popular belief, It has roots in a piece of classical Latin

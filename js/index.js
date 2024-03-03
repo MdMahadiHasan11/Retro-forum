@@ -1,6 +1,6 @@
 // all post
-const createPost = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const createPost = async (searchText2) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText2}`);
 
     const data = await res.json();
     const info = data.posts;
@@ -9,6 +9,39 @@ const createPost = async () => {
     displayPost(info);
 
 }
+
+const c='';
+ createPost(c);
+// call all post
+
+
+// searchPost
+// handle search
+const handleSearch = ()=>{
+    
+
+    const inputText=document.getElementById('searchId');
+    const searchText=inputText.value;
+
+    // console.log(searchText);
+
+    // clear 
+    const postContainer = document.getElementById('postContainer');
+     
+    postContainer.textContent='';
+
+    createPost(searchText);
+    
+        // displayPost(info);
+    
+
+
+}
+
+
+
+
+
 
 // latest post
 const latestPost = async () => {
@@ -22,7 +55,7 @@ const latestPost = async () => {
 
 }
 
-createPost();
+
 latestPost();
 
 
@@ -46,7 +79,7 @@ const displayPost = (postInfos) => {
         <!-- image -->
                         <div class="relative">
                             <img class="rounded-2xl " src="${postInfo.image}" alt="">
-                            <div class="h-3 w-3 rounded-full bg-green-600 absolute top-0 right-0"></div>
+                            <div class="bg-green-500 h-3 w-3 rounded-full  absolute top-0 right-0"></div>
                         </div>
 
                         <!--card body -->
@@ -108,9 +141,6 @@ const displayPost = (postInfos) => {
         postContainer.appendChild(postDis);
 
     });
-
-
-
 }
 
 
@@ -135,7 +165,7 @@ const displayLatestPost = (latestPostInfos) => {
 
     <div class="flex gap-3 my-3">
         <i class="fa-solid fa-calendar-days"></i>
-        <p>${latestPostInfo.author.posted_date?latestPostInfo.author.posted_date : "No Publish Date"}</p>
+        <p>${latestPostInfo.author.posted_date ? latestPostInfo.author.posted_date : "No Publish Date"}</p>
     </div>
 
     <div>
@@ -152,7 +182,7 @@ const displayLatestPost = (latestPostInfos) => {
 
         <div>
             <p class="font-semibold">${latestPostInfo.author.name}</p>
-            <p class="text-gray-600">${latestPostInfo.author.designation? latestPostInfo.author.designation : "Unknown"}</p>
+            <p class="text-gray-600">${latestPostInfo.author.designation ? latestPostInfo.author.designation : "Unknown"}</p>
         </div>
     </div>
 
@@ -163,3 +193,4 @@ const displayLatestPost = (latestPostInfos) => {
 
     });
 }
+
