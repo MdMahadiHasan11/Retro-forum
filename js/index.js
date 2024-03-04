@@ -87,7 +87,7 @@ const displayPost = (postInfos) => {
         <!-- image -->
                         <div class="relative">
                             <img class="rounded-2xl " src="${postInfo.image}" alt="">
-                            <div id="${postInfo.id}"  class=" h-3 w-3 rounded-full  absolute top-0 right-0"></div>
+                            <div id="${postInfo.id}"  class=" h-4 w-4 rounded-full  absolute top-0 right-0"></div>
                         </div>
 
                         <!--card body -->
@@ -160,12 +160,12 @@ const displayPost = (postInfos) => {
 
         if(postInfo.isActive){
 
-            activeSet.classList.add('bg-green-600');
+            activeSet.classList.add('bg-green-500');
 
         }
         else{
             
-            activeSet.classList.add('bg-red-600');
+            activeSet.classList.add('bg-red-500');
         }
         // active color set end
 
